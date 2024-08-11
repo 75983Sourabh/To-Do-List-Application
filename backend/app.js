@@ -37,7 +37,7 @@ app.get('/api/tasks', async (req, res) => {
   }
 });
 
-app.post('/api/task', async (req, res) => {
+app.post('/api/tasks', async (req, res) => {
   const task = new Task(req.body);
   try {
     const newTask = await task.save();
@@ -47,7 +47,7 @@ app.post('/api/task', async (req, res) => {
   }
 });
 
-app.put('/api/task/:id', async (req, res) => {
+app.put('/api/tasks/:id', async (req, res) => {
   try {
     const updatedTask = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.json(updatedTask);
@@ -56,7 +56,7 @@ app.put('/api/task/:id', async (req, res) => {
   }
 });
 
-app.delete('/api/task/:id', async (req, res) => {
+app.delete('/api/tasks/:id', async (req, res) => {
   try {
     await Task.findByIdAndDelete(req.params.id);
     res.json({ message: 'Task deleted' });
