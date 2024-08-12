@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './TaskForm.css';
+
 
 const TaskItem = ({ task, onEdit, onDelete }) => {
   return (

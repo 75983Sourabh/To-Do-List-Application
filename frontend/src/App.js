@@ -3,6 +3,11 @@ import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
 import taskService from './services/taskService';
 import './App.css';
+//import '.components/TaskForm.css';
+
+
+//import 'bootstrap/dist/css/bootstrap-grid.min.css';
+
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -59,8 +64,9 @@ const App = () => {
 
   return (
     <div className="App">
+      
       <header>
-        <h1>To-Do List</h1>
+        <h1>Task</h1>
         <button
           className="btn btn-primary"
           onClick={() => setIsFormVisible(true)}

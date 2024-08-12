@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import taskService from '../services/taskService';
-import './TaskForm.css';
+import './newtask.css';
 
 const TaskForm = ({ task, onSave, onCancel }) => {
   const [formData, setFormData] = useState({
@@ -48,8 +48,10 @@ const TaskForm = ({ task, onSave, onCancel }) => {
     onSave();
   };
 
-  return (
+  return (<>
     <div className="task-form">
+      
+      <title>New Task</title>
       <h2>{task ? 'Edit Task' : 'New Task'}</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -62,8 +64,7 @@ const TaskForm = ({ task, onSave, onCancel }) => {
             onChange={handleChange}
             required
           />
-        </div>
-        <div className="form-group">
+        </div><div className="form-group">
           <label htmlFor="status">Status</label>
           <select
             id="status"
@@ -122,6 +123,7 @@ const TaskForm = ({ task, onSave, onCancel }) => {
         </div>
       </form>
     </div>
+    </>
   );
 };
 
